@@ -1,0 +1,7 @@
+?start: statement
+statement: positional* optional*
+command: word
+positional: " " word
+optional: (" -" letter " " word*) | (" --" word " " word*)
+word: /[a-zA-Z]+/
+letter: /[a-zA-Z]/
