@@ -1,7 +1,8 @@
 ?start: statement
-statement: positional* optional*
-command: word
+statement: positionals? optionals?
+positionals: positional | positionals positional
+optionals: optional | optionals optional
 positional: " " word
-optional: (" -" letter " " word*) | (" --" word " " word*)
+optional: (" -" letter (" " word)*) | (" --" word (" " word)*)
 word: /[a-zA-Z]+/
 letter: /[a-zA-Z]/
